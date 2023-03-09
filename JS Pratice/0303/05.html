@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<!-- 곱셈 또는 나눗셈을 출력하는 html과 스크립트 코드를 작성 하시오 -->
+<body>
+  <input type="text" id="fNumber">
+  <input type="text" id="sNumber">
+  <button type="button" onclick="mul()">곱하기</button>
+  <button type="button" onclick="div()">나누기</button>
+  <div id="result"></div>
+
+
+  <script>
+    function mul(){
+      const num1 = document.getElementById("fNumber").value;
+      const num2 = document.getElementById("sNumber").value;
+      document.getElementById("result").innerHTML = num1*num2
+    }
+    function div(){
+      const num1 = document.getElementById("fNumber").value;
+      const num2 = document.getElementById("sNumber").value;
+      document.getElementById("result").innerHTML = num1/num2
+    }
+  </script>
+</body>
+</html>

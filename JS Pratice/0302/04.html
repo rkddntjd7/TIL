@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+          .tab{
+            border: 1px solid #ccc;
+            background-color: #f1f1f1;
+            padding: 10px;
+            overflow: hidden;
+          }
+          .tab a{
+            float: left;
+            display: block;
+            text-decoration: none;
+            color: #000;
+            font-size: 20px;
+            line-height: 40px;
+            padding: 15px 20px;
+            transition: all 0.3s;
+          }
+          .tab a:hover,.tab a.active{
+
+            background: #ddd;
+          }
+          .tabcontent{
+            padding: 30px;
+            border: 1px solid #ccc;
+            border-top: none;
+            display: none;
+          }
+        </style>
+    </head>
+    <body>
+      <div class="tab">
+        <a href="javascript:void(0)" class="tablinks" id="default" onclick="openCity(event, 'london')">런던</a>
+        <a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'pari')">파리</a>
+        <a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'seoul')">서울</a>
+    </div>
+    <div id="london" class="tabcontent">
+        <h1>LONDON</h1>
+        <p>런던은 영국의 수도입니다.</p>
+    </div>
+    <div id="pari" class="tabcontent">
+        <h1>PARI</h1>
+        <p>파리는 프랑스의 수도입니다.</p>
+    </div>
+    <div id="seoul" class="tabcontent">
+        <h1>SEOUL</h1>
+        <p>서울은 대한민국의 수도입니다.</p>
+    </div>
+    <script>
+    function openCity(e, cityName){
+        let i, tabcontent, tablinks;
+        tablinks = document.getElementsByClassName("tablinks");
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for(i = 0; i < tablinks.length; i++){
+            /* tablinks[i].className = tablinks[i].classList.remove("active"); */
+            tablinks[i].className = tablinks[i].className.replace("active");  
+        }
+        for(i = 0; i < tabcontent.length; i++){
+            tabcontent[i].style.display = "none";
+        }
+        document.getElementById(cityName).style.display = "block";
+        // e.currentTarget.classList.add("active");
+        e.currentTarget.className += "active"; 
+
+    }
+    document.getElementById("default").click();
+    
+    </script>
+
+        
+    </body>
+</html>

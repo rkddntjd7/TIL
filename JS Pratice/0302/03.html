@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <!-- JavaScript 라는 문자의 끝을 하나씩 지우고 앞으로 붙이는 함수를 만든 후  setInterval을 이용하여 일정시간동안 문자열이 흐르는 듣한 모습을 만드시오 -->
+    <body onload="ani_string('target')">
+        <pre id="target">abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz</pre>
+        <script>
+          function ani_string(id){
+            const el = document.getElementById(id); 
+            let textNode = el.childNodes[0];  //자식 요소들
+            let text = textNode.data; //자식 요소들의 텍스트 배열
+
+            setInterval(function(){
+            text = text[text.length - 1] + text.substring(0, text.length -1);
+            textNode.data = text;
+          },1);
+          }
+        </script>
+    </body>
+</html>
