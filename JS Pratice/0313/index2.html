@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        .container {
+            max-width: 1000px;
+            margin: 50px auto;
+        }
+
+        .accordion {
+            outline: none;
+            border: none;
+            scroll-padding-block-start: #ededed;
+            color: #333;
+            cursor: pointer;
+            padding: 18px;
+            font-size: 16px;
+            width: 100%;
+            text-align: left;
+        }
+
+        .accordion:last-child {
+            border-bottom: none;
+        }
+
+        .accordion i {
+            float: right;
+        }
+
+        .accordion::after {
+            content: '\002B';
+            color: #333;
+            font-weight: bold;
+            float: right;
+        }
+
+        .active::after {
+            content: "\2212";
+        }
+
+        .panel {
+            padding: 0 18px;
+            background-color: #ffff;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .active, .accordion:hover {
+            background: #ccc;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>2. 아코디언 메뉴</h1>
+        <button class="accordion">내용1
+            <!-- <i class="fa-solid fa-plus"></i> -->
+        </button>
+        <div class="panel">
+            <p>
+                반짝이는 품으며, 인류의 있는 이 과실이 주며, 밥을 위하여서. 청춘의 목숨을 위하여 우리의 청춘의 약동하다. 눈이 실로 그들에게 장식하는 크고 못하다 이것이다. 붙잡아 얼음에 보는 얼마나 풍부하게 찾아다녀도, 따뜻한 청춘 끓는다.
+            </p>
+        </div>
+        <button class="accordion">내용1
+            <!-- <i class="fa-solid fa-plus"></i> -->
+        </button>
+        <div class="panel">
+            <p>
+                반짝이는 품으며, 인류의 있는 이 과실이 주며, 밥을 위하여서. 청춘의 목숨을 위하여 우리의 청춘의 약동하다. 눈이 실로 그들에게 장식하는 크고 못하다 이것이다. 붙잡아 얼음에 보는 얼마나 풍부하게 찾아다녀도, 따뜻한 청춘 끓는다.
+            </p>
+        </div>
+        <button class="accordion">내용1
+            <!-- <i class="fa-solid fa-plus"></i> -->
+        </button>
+        <div class="panel">
+            <p>
+                반짝이는 품으며, 인류의 있는 이 과실이 주며, 밥을 위하여서. 청춘의 목숨을 위하여 우리의 청춘의 약동하다. 눈이 실로 그들에게 장식하는 크고 못하다 이것이다. 붙잡아 얼음에 보는 얼마나 풍부하게 찾아다녀도, 따뜻한 청춘 끓는다.
+            </p>
+        </div>
+    </div>
+
+    <script>
+        const acc = document.getElementsByClassName("accordion");
+        let i;
+        for(i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function(){
+                this.classList.toggle('active');
+                const panel = this.nextElementSibling;
+                if(panel.style.maxHeight){
+                    panel.style.maxHeight = null;
+                    // this.children[0].classList.remove('fa-minus');
+                    // this.children[0].classList.add('fa-plus');
+                }
+                else {
+                    panel.style.maxHeight = panel.scrollHeight + "px";
+                    // this.children[0].classList.remove('fa-plus');
+                    // this.children[0].classList.add('fa-minus');
+                }
+            })
+        }
+    </script>
+</body>
+</html>

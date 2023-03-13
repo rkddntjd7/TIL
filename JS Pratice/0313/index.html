@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>x자로 변하는 메뉴</title>
+        <style>
+            .btn {
+            width: 35px;
+            margin: 50px;
+            cursor: pointer;
+            }
+
+            .bar1,
+            .bar2,
+            .bar3 {
+                height: 5px;
+                background-color: #333;
+                margin: 6px 0;
+                transition: all 300ms;
+            }
+
+            .change .bar1 {
+                transform: translate(0, 11px) rotate(-45deg) ;
+            }
+
+            .change .bar2 {
+                opacity: 0;
+            }
+
+            .change .bar3 {
+                transform: translate(0, -11px) rotate(45deg) ;
+            }
+        </style>
+    </head>
+    <body>
+        <p>1. x자로 변하는 메뉴</p>
+        <div class="btn change" onclick="changeFunction(this)">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+        </div>
+        <script>
+            function changeFunction(x) {
+             x.classList.toggle("change");
+            }
+
+            // const btn = document.querySelector('.btn');
+            // btn.addEventListener('click, changeFunction');
+            // function changeFunction() {
+            //     btn.classList.toggle("change");
+            // }
+            // html onclick 안할시 js
+        </script>
+    </body>
+</html>
