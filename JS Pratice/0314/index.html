@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <button class="tablink" id="default" onclick="openPage('home', this, 'red')">HOME</button>
+        <button class="tablink" onclick="openPage('news', this, 'green')">NEWS</button>
+        <button class="tablink" onclick="openPage('contact', this, 'blue')">CONTACT</button>
+        <button class="tablink" onclick="openPage('about', this, 'darkgoldenrod')">ABOUT</button>
+        <div class="tabcontent" id="home">
+            <h1>home</h1>
+            <p>여기는 home 페이지입니다.</p>
+        </div>
+        <div class="tabcontent" id="news">
+            <h1>news</h1>
+            <p>여기는 news 페이지입니다.</p>
+        </div>
+        <div class="tabcontent" id="contact">
+            <h1>contact</h1>
+            <p>여기는 contact 페이지입니다.</p>
+        </div>
+        <div class="tabcontent" id="about">
+            <h1>about</h1>
+            <p>여기는 about 페이지입니다.</p>
+        </div>
+        <script src="js/work.js"></script>
+    </body>
+</html>
