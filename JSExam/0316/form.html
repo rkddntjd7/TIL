@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <h1>뉴스레터 구독을 위해 이메일을 입력하세요</h1>
+        <div>
+            <input type="text" id="email" name="email" placeholder="이메일주소">
+            <button type="button" onclick="verifyEmail()">지금구독하기</button>
+        </div>
+    </form>
+
+    <script>
+        const verifyEmail = () => {
+            const emailVail = document.getElementById('email').value;
+            const regExp = /[a-zA-Z0-9._+-]+@[a-zA-Z0-9-]+\.[a-zA-Z9-9.]+/gm;
+
+            if(emailVail.match(regExp) != null) {
+                alert('검증되었습니다.');
+            }
+            else {
+                alert('이메일이 아닙니다. 다시 입력하세요')
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .play{
+            width:560px;
+            height:315px;
+            border:2px solid #ddd;
+            box-shadow: 0 0 25px 0 rgba(0,0,0,0.4);
+            position:fixed;
+            top:140px;
+            left:50%;
+            transform: translateX(-50%);
+            display:block;
+        }
+    </style>
+</head>
+<body>
+    <form action="">
+        <h1>실행시키고 싶은 유튜브 링크를 입력하세요.</h1>
+        <div>
+            <input type="text" id="youtube" name="youtube" placeholder="유튜브주소">
+            <button type="button" onclick="verifyTube()">지금플레이하기</button>
+        </div>
+    </form>
+    <div class="play">
+        <iframe 
+           width="560" 
+           height="315" 
+           src="" 
+           id="ytb"
+           title="YouTube video player" 
+           frameborder="0" 
+           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+           allowfullscreen></iframe>   
+    </div>
+    <script>
+        const verifyTube = () => {
+            const youtube = document.getElementById('youtube').value;
+            const regex = /(?:https?:\/\/)?(?:www\.)?youtu.be\/([a-zA-Z0-9-]{11})/;
+            const result = youtube.match(regex);
+            //console.log(result[1])
+            const links = "https://www.youtube.com/embed/"+result[1]+"?autoplay=1&mute=1";
+            document.getElementById('ytb').src=links; 
+        }
+    </script>
+</body>
+</html>
