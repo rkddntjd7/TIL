@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!--정규표현식 연습 
+    1. html로 끝나는지 검사하라.-->
+    
+    <input type="file" id="file" onChange="fileUpload(this.value)">
+
+
+    <script>
+        function fileUpload(fileVal) {
+            const reg = new RegExp('html$','i');
+            if (reg.test(fileVal)) {
+                console.log('html 파일입니다.');
+            }
+            else {
+                console.log('html 파일이 아닙니다.');
+            }
+        }
+    </script>
+</body>
+</html>
