@@ -34,6 +34,16 @@
 
 11. delete from 테이블명 where 조건절
 
+12. select distinct 컬럼명1, 컬럼명2 from 테이블면 where 조건절
+
+13. select * from 테이블명 where (not) 조건1 and / or (not) 조건2...
+
+14. countrycode in('kor', 'chn', 'jpn');
+
+15. select * from city where countrycode ='kor' and (population between 1000000 and 5000000);
+
+16. select * from 테이블명 whrere 조건절 order by 컬럼명 asc / desc;
+
 - 주석처리
 
 1. "#" 한 줄 주석
