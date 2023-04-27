@@ -1,0 +1,32 @@
+# WorkBench 
+
+- 스키마
+  - 데이터베이스 생성 삭제
+  - DB 개체 생성 관리
+  - 속성 조회
+  - 테이블 컬럼 추가 / 삭제 / 수정
+    - 추가 : alter table 테이블명 add 컬럼명 데이터타입
+    - 삭제 : alter table 테이블명 drop column 컬럼명
+    - 수정 : alter table 테이블명 change 컬럼명 new컬럼명 데이터타입
+    - 수정(데이터타입 변경) : alter table 테이블명 modify 컬럼명  데이터타입(변경된)
+    - 순서조정 : alter table 테이블명 modify column 순서변경컬럼 자료형 after 앞에 오는 컬럼명;
+  - 제약조건 추가 / 제약조건을 삭제
+    - alter table 테이블명 add primary key (컬럼명)
+    - alter table 테이블명 drop primary key
+  -  uniqe 제약조건
+    - alter table 테이블명 add unique (컬럼명)
+    - alter table 테이블명 drop unique 컬럼명
+  - alter table 테이블명 add constraint 제약조건 컬럼명
+    - 제약조건 삭제 alter table 테이블명 drop constraint 제약조건이름;
+    - 외래키 삭제 alter table 테이블명 foreign key 제약조건 이름
+  - 테이블 명 변경
+    - alter table 테이블명 rename 새로운 테이블명
+  - default 제약조건 추가 / 삭제
+    - alter table 테이블명 alter 컬럼명 set default 기본값
+    - alter table 테이블명 alter 컬럼명 drop default
+- management
+  - server status : 현재 접속된 서버의 상태 파악
+- instance : 서버의 현재 작동 상태, 중지, 시작 설정
+  - server logs -  서버에 기록된 오류, 경고, 방화벽 등의 로그 확인
+  - mysql 기본 설정파일 my.ini - 를 GUI 형태로 보여줌
+- performance
